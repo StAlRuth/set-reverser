@@ -70,6 +70,29 @@ function calc() {
   });
 }
 
+function voidNature() {
+  let stats = ['atk', 'def', 'spa', 'spd', 'spe'];
+  stats.forEach(statname => {
+    let nature = document.getElementById(statname).querySelector('.nature');
+    nature.value = "1.0";
+  });
+}
+
+function setNature() {
+  let nature = document.getElementById('nature').value.split('/');
+  let inc = nature[0];
+  let dec = nature[1];
+  voidNature();
+
+  if (inc === dec) {
+    return;
+  }
+
+  document.getElementById(inc).querySelector('.nature').value = "1.1"
+  document.getElementById(dec).querySelector('.nature').value = "0.9"
+}
+
 document.getElementById('pokemon').addEventListener('change', setBase);
 document.getElementById('calculate').addEventListener('click', calc);
+document.getElementById('nature').addEventListener('change', setNature);
 

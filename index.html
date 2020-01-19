@@ -17,7 +17,7 @@
   <body>
     <h1>Pokemon Set Reverser</h1>
     <div class="grid-x">
-      <div class="cell small-12 medium-6">
+      <div class="cell small-12 medium-4">
         <label>Pokemon:
           <select id="pokemon">
             <option value="90/132/105/132/105/30">Abomasnow-Mega</option>
@@ -1147,9 +1147,40 @@
           </select>
         </label>
       </div>
-      <div class="cell small-12 medium-6">
+      <div class="cell small-12 medium-4">
         <label>Level:
           <input type="number" min=1 max=100 id="level">
+        </label>
+      </div>
+      <div class="cell small-12 medium-4">
+        <label>Nature:
+          <select id="nature">
+            <option value="atk/spa">Adamant</option>
+            <option value="spa/spa" selected>Bashful</option>
+            <option value="def/atk">Bold</option>
+            <option value="atk/spe">Brave</option>
+            <option value="spd/atk">Calm</option>
+            <option value="spd/spa">Careful</option>
+            <option value="def/def">Docile</option>
+            <option value="spd/def">Gentle</option>
+            <option value="atk/atk">Hardy</option>
+            <option value="spe/def">Hasty</option>
+            <option value="def/spa">Impish</option>
+            <option value="spe/spa">Jolly</option>
+            <option value="def/spd">Lax</option>
+            <option value="atk/def">Lonely</option>
+            <option value="spa/def">Mild</option>
+            <option value="spa/atk">Modest</option>
+            <option value="spe/spd">Naive</option>
+            <option value="atk/spd">Naughty</option>
+            <option value="spa/spe">Quiet</option>
+            <option value="spd/spd">Quirky</option>
+            <option value="spa/spd">Rash</option>
+            <option value="def/spe">Relaxed</option>
+            <option value="spd/spe">Sassy</option>
+            <option value="spe/spe">Serious</option>
+            <option value="spe/atk">Timid</option>
+          </select>
         </label>
       </div>
       <table class="cell small-12">
@@ -1165,7 +1196,7 @@
           <td><input type="number" class="base" disabled></td>
           <td><input type="number" class="statnum"></td>
           <td>
-            <select class="nature" disabled>
+            <select class="nature hide" disabled>
               <option value="1.1">1.1x</option>
               <option value="1.0" selected>-</option>
               <option value="0.9">0.9x</option>
