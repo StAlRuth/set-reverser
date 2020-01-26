@@ -20,11 +20,9 @@ function getPossibleSet(type, stat, base, lv, nature) {
   }
 
   if (stat < getStat(base, 0, lv, nature)) {
-    console.log('smol', getStat(base, 0, lv, nature));
     return;
   }
   if (stat > getStat(base, 94, lv, nature)) {
-    console.log('big', getStat(base, 94, lv, nature));
     return;
   }
 
@@ -61,6 +59,9 @@ function calc() {
     let stat = row.querySelector('.statnum').value;
     let base = row.querySelector('.base').value;
     let nature = row.querySelector('.nature').value;
+    if (!stat) {
+      return;
+    }
     let result = getPossibleSet(statname, Number(stat), Number(base), Number(level), Number(nature));
     console.log(row.querySelector('.result'));
     row.querySelector('.result').textContent = result['iv'] + ' IVs';
