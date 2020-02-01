@@ -26,7 +26,13 @@ function getPossibleSet(type, stat, base, lv, nature) {
     return;
   }
 
-  for (i = 31; i >= 0; i--) {
+  /* start with 0 */ {
+    let currentStat = getStat(base, 0, lv, nature);
+    if (currentStat == stat) {
+      return getInv(0);
+    }
+  }
+  for (i = 31; i >= 1; i--) {
     let currentStat = getStat(base, i, lv, nature);
     if (currentStat == stat) {
       return getInv(i);
@@ -68,9 +74,14 @@ function calc() {
     }
     let result = getPossibleSet(statname, Number(stat), Number(base), Number(level), Number(nature));
     if (result !== undefined) {
-      row.querySelector('.result').textContent = result['iv'] + ' IVs';
-      if (result['ev'] > 0) {
-        row.querySelector('.result').textContent += ' / ' + result['ev'] + ' EVs';
+      if (result['iv'] === 31 && result['ev'] === 0) {
+        row.querySelector('.result').textContent = 'Uninvested';
+      }
+      if (result['iv'] !== 31) {
+        row.querySelector('.result').textContent = result['iv'] + ' IVs';
+      }
+      if (result['ev'] !== 0) {
+        row.querySelector('.result').textContent = result['ev'] + ' EVs';
       }
     }
   });
