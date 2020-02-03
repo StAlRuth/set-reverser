@@ -64,6 +64,9 @@ function setBase() {
 function calc() {
   let stats = ['hp', 'atk', 'def', 'spa', 'spd', 'spe'];
   let level = document.getElementById('level').value;
+  if (!level) {
+    return;
+  }
   stats.forEach(statname => {
     row = document.getElementById(statname);
     let stat = row.querySelector('.statnum').value;
