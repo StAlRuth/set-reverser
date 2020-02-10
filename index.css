@@ -1,3 +1,8 @@
 body {
   margin: 0.5em;
 }
+
+.grid-x > div.header {
+  padding: 0px 0.5rem;
+}
+
