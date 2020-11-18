@@ -134,7 +134,7 @@ class App extends Component {
         <div class="cell small-12 medium-4">
           <label>
             Pokemon
-            <input type="text" list="pokemon" onInput={this.onInputPokemon} />
+            <input type="search" list="pokemon" onInput={this.onInputPokemon} />
           </label>
         </div>
         <div class="cell small-12 medium-4">
