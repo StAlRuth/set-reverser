@@ -131,19 +131,19 @@ class App extends Component {
     <form id="app" onsubmit={this.onSubmit}>
       <h1>Pokemon Set Reverser</h1>
       <div class="grid-x">
-        <div class="cell small-12 medium-4">
+        <div class="cell small-12 medium-auto">
           <label>
             Pokemon
             <input type="search" list="pokemon" onInput={this.onInputPokemon} />
           </label>
         </div>
-        <div class="cell small-12 medium-4">
+        <div class="cell small-12 medium-auto">
           <label>
             Level
             <input type="number" value={this.state.level} onInput={this.onInputLevel} />
           </label>
         </div>
-        <div class="cell small-12 medium-4">
+        <div class="cell small-12 medium-auto">
           <label>
             Nature
             <select onInput={this.onInputNature}>
@@ -175,82 +175,82 @@ class App extends Component {
             </select>
           </label>
         </div>
-        <table class="cell small-12">
-          <tbody>
-            <tr>
-              <td></td>
-              <th scope="col">Base:</th>
-              <th scope="col">Stat:</th>
-              <th scope="col">Nature:</th>
-              <th scope="col">Output:</th>
-            </tr>
-            <StatRow
-              isHP={true}
-              name={"HP"}
-              base={state.base["hp"]}
-              value={state.value["hp"]}
-              onInputBase={this.onInputBase("hp")}
-              onInputValue={this.onInputValue("hp")}
-              results={this.state.results["hp"]}
-            />
-            <StatRow
-              isHP={false}
-              name={"Atk"}
-              base={state.base["atk"]}
-              value={state.value["atk"]}
-              nature={state.nature["atk"]}
-              onInputBase={this.onInputBase("atk")}
-              onInputValue={this.onInputValue("atk")}
-              onInputMod={this.onInputMod("atk")}
-              results={this.state.results["atk"]}
-            />
-            <StatRow
-              isHP={false}
-              name={"Def"}
-              base={state.base["def"]}
-              value={state.value["def"]}
-              nature={state.nature["def"]}
-              onInputBase={this.onInputBase("def")}
-              onInputValue={this.onInputValue("def")}
-              onInputMod={this.onInputMod("def")}
-              results={this.state.results["def"]}
-            />
-            <StatRow
-              isHP={false}
-              name={"SpA"}
-              base={state.base["spa"]}
-              value={state.value["spa"]}
-              nature={state.nature["spa"]}
-              onInputBase={this.onInputBase("spa")}
-              onInputValue={this.onInputValue("spa")}
-              onInputMod={this.onInputMod("spa")}
-              results={this.state.results["spa"]}
-            />
-            <StatRow
-              isHP={false}
-              name={"SpD"}
-              base={state.base["spd"]}
-              value={state.value["spd"]}
-              nature={state.nature["spd"]}
-              onInputBase={this.onInputBase("spd")}
-              onInputValue={this.onInputValue("spd")}
-              onInputMod={this.onInputMod("spd")}
-              results={this.state.results["spd"]}
-            />
-            <StatRow
-              isHP={false}
-              name={"Spe"}
-              base={state.base["spe"]}
-              value={state.value["spe"]}
-              nature={state.nature["spe"]}
-              onInputBase={this.onInputBase("spe")}
-              onInputValue={this.onInputValue("spe")}
-              onInputMod={this.onInputMod("spe")}
-              results={this.state.results["spe"]}
-            />
-          </tbody>
-        </table>
       </div>
+      <table>
+        <tbody>
+          <tr>
+            <td></td>
+            <th scope="col">Base:</th>
+            <th scope="col">Stat:</th>
+            <th scope="col">Nature:</th>
+            <th scope="col">Output:</th>
+          </tr>
+          <StatRow
+            isHP={true}
+            name={"HP"}
+            base={state.base["hp"]}
+            value={state.value["hp"]}
+            onInputBase={this.onInputBase("hp")}
+            onInputValue={this.onInputValue("hp")}
+            results={this.state.results["hp"]}
+          />
+          <StatRow
+            isHP={false}
+            name={"Atk"}
+            base={state.base["atk"]}
+            value={state.value["atk"]}
+            nature={state.nature["atk"]}
+            onInputBase={this.onInputBase("atk")}
+            onInputValue={this.onInputValue("atk")}
+            onInputMod={this.onInputMod("atk")}
+            results={this.state.results["atk"]}
+          />
+          <StatRow
+            isHP={false}
+            name={"Def"}
+            base={state.base["def"]}
+            value={state.value["def"]}
+            nature={state.nature["def"]}
+            onInputBase={this.onInputBase("def")}
+            onInputValue={this.onInputValue("def")}
+            onInputMod={this.onInputMod("def")}
+            results={this.state.results["def"]}
+          />
+          <StatRow
+            isHP={false}
+            name={"SpA"}
+            base={state.base["spa"]}
+            value={state.value["spa"]}
+            nature={state.nature["spa"]}
+            onInputBase={this.onInputBase("spa")}
+            onInputValue={this.onInputValue("spa")}
+            onInputMod={this.onInputMod("spa")}
+            results={this.state.results["spa"]}
+          />
+          <StatRow
+            isHP={false}
+            name={"SpD"}
+            base={state.base["spd"]}
+            value={state.value["spd"]}
+            nature={state.nature["spd"]}
+            onInputBase={this.onInputBase("spd")}
+            onInputValue={this.onInputValue("spd")}
+            onInputMod={this.onInputMod("spd")}
+            results={this.state.results["spd"]}
+          />
+          <StatRow
+            isHP={false}
+            name={"Spe"}
+            base={state.base["spe"]}
+            value={state.value["spe"]}
+            nature={state.nature["spe"]}
+            onInputBase={this.onInputBase("spe")}
+            onInputValue={this.onInputValue("spe")}
+            onInputMod={this.onInputMod("spe")}
+            results={this.state.results["spe"]}
+          />
+        </tbody>
+      </table>
       <button type="submit" class="button cell small-12">Calculate</button>
     </form>
   );

@@ -1,3 +1,16 @@
 body {
   margin: 0.5rem;
 }
+
+.grid-x {
+  margin: 0 -5px;
+}
+
+.grid-x > div {
+  margin: 0 5px;
+}
+
+table input[type], table select {
+  margin-bottom: 0;
+}
+

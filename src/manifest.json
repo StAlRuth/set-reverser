@@ -1,6 +1,6 @@
 {
-  "name": "set-reverser2",
-  "short_name": "set-reverser",
+  "name": "Pokemon Set Reverser",
+  "short_name": "Set Reverser",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
