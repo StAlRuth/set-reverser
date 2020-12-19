@@ -49,7 +49,6 @@ class App extends Component {
     const newId = idify(ev.target.value);
     if(Object.prototype.hasOwnProperty.call(pokedex, newId)) {
       this.setState((state) => {
-        console.log(newId, pokedex[newId]);
         return {base: pokedex[newId]};
       });
     }
@@ -112,15 +111,16 @@ class App extends Component {
 
   onSubmit = (ev) => {
     ev.preventDefault();
+    const data = new FormData(ev.target);
     const results = {};
-    ['hp', 'atk', 'def', 'spa', 'spd', 'spe'].forEach((i) => {
+    ['HP', 'Atk', 'Def', 'SpA', 'SpD', 'Spe'].forEach((i) => {
       results[i] = getPossibleSet(
-        i === 'hp',
-        Number(this.state.value[i]),
-        Number(this.state.base[i]),
-        Number(this.state.level),
-        Number(this.state.nature[i]));
-      console.log(results[i]);
+        i === 'HP',
+        Number(data.get(i + '_value')),
+        Number(data.get(i + '_base')),
+        Number(data.get(i + '_level')),
+        Number(data.get(i + '_nature'))
+      );
     });
     this.setState((state) => {
       return {results: results};
@@ -140,7 +140,7 @@ class App extends Component {
         <div class="cell small-12 medium-auto">
           <label>
             Level
-            <input type="number" value={this.state.level} onInput={this.onInputLevel} />
+            <input name="level" type="number" value={this.state.level} onInput={this.onInputLevel} />
           </label>
         </div>
         <div class="cell small-12 medium-auto">

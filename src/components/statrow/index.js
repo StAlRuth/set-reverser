@@ -26,14 +26,14 @@ class StatRow extends Component {
           {props.name}
         </th>
         <td>
-          <input type='number' value={this.props.base} onInput={this.props.onInputBase} />
+          <input name={this.props.name + '_base'} type='number' value={this.props.base} onInput={this.props.onInputBase} />
         </td>
         <td>
-          <input type='number' value={this.props.value} onInput={this.props.onInputValue} />
+          <input name={this.props.name + '_value'} type='number' value={this.props.value} onInput={this.props.onInputValue} />
         </td>
         <td>
           {props.isHP ? ("") : (
-            <select value={this.props.nature} onInput={this.props.onInputMod}>
+            <select name={this.props.name + '_nature'} value={this.props.nature} onInput={this.props.onInputMod}>
               <option value='1'>-</option>
               <option value='1.1'>1.1x</option>
               <option value='0.9'>0.9x</option>

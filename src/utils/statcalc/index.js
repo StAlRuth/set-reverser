@@ -18,7 +18,6 @@ function getInvestment(inv) {
 }
 
 function getPossibleSet(isHP, stat, base, lv, nature) {
-  console.log(isHP, stat, base, lv, nature);
   if (stat < getStat(isHP, base, 0, lv, nature)) {
     return;
   }
@@ -29,14 +28,12 @@ function getPossibleSet(isHP, stat, base, lv, nature) {
   /* start with 0 */ {
     let currentStat = getStat(isHP, base, 0, lv, nature);
     if (currentStat == stat) {
-      console.log(currentStat, 0);
       return getInvestment(0);
     }
   }
   for (let i = 31; i >= 1; i--) {
     let currentStat = getStat(isHP, base, i, lv, nature);
     if (currentStat == stat) {
-      console.log(currentStat, i);
       return getInvestment(i);
     }
   }
@@ -44,7 +41,6 @@ function getPossibleSet(isHP, stat, base, lv, nature) {
   for (let i = 32; i <= 94; i++) {
     let currentStat = getStat(isHP, base, i, lv, nature);
     if (currentStat == stat) {
-      console.log(currentStat, i);
       return getInvestment(i);
     }
   }
