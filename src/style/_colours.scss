@@ -1,0 +1,21 @@
+@use "sass:color";
+
+:root {
+  --primary: #aa33aa;
+  --primary-light: #912b91;
+  --foreground: #0a0a0a;
+  --background: #fefefe;
+  --border-colour: #f1f1f1;
+  --tablebg: #f1f1f1;
+}
+
+@media(prefers-color-scheme: dark) {
+  :root {
+    --primary: #606;
+    --primary-light: #a300a3;
+    --foreground: #cccccc;
+    --background: #000000;
+    --border-colour: #222;
+    --tablebg: #111
+  }
+}
