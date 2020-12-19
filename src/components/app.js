@@ -131,7 +131,7 @@ class App extends Component {
       ['hp', 'atk', 'def', 'spa', 'spd', 'spe'].forEach((i) => {
         newState['base'][i] = data.get(i + '_base');
         newState['nature'][i] = data.get(i + '_nature');
-        newState['value'][i] = data.get(i + '_nature');
+        newState['value'][i] = data.get(i + '_value');
       });
       return {
         ...newState,
