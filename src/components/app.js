@@ -113,12 +113,12 @@ class App extends Component {
     ev.preventDefault();
     const data = new FormData(ev.target);
     const results = {};
-    ['HP', 'Atk', 'Def', 'SpA', 'SpD', 'Spe'].forEach((i) => {
+    ['hp', 'atk', 'def', 'spa', 'spd', 'spe'].forEach((i) => {
       results[i] = getPossibleSet(
-        i === 'HP',
+        i === 'hp',
         Number(data.get(i + '_value')),
         Number(data.get(i + '_base')),
-        Number(data.get(i + '_level')),
+        Number(data.get('level')),
         Number(data.get(i + '_nature'))
       );
     });
