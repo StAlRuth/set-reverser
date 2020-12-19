@@ -123,7 +123,20 @@ class App extends Component {
       );
     });
     this.setState((state) => {
-      return {results: results};
+      const newState = {
+        base: {},
+        nature: {},
+        value: {}
+      };
+      ['hp', 'atk', 'def', 'spa', 'spd', 'spe'].forEach((i) => {
+        newState['base'][i] = data.get(i + '_base');
+        newState['nature'][i] = data.get(i + '_nature');
+        newState['value'][i] = data.get(i + '_nature');
+      });
+      return {
+        ...newState,
+        results: results
+      };
     });
   }
 
