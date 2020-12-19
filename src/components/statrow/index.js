@@ -5,9 +5,9 @@ class StatRow extends Component {
     super();
   }
 
-  renderInvestment() {
-    const iv = this.props.results['iv'];
-    const ev = this.props.results['ev'];
+  renderInvestment(props) {
+    const iv = props.results['iv'];
+    const ev = props.results['ev'];
     if(ev === 0 && iv === 31) {
       return "Uninvested";
     }
@@ -42,7 +42,7 @@ class StatRow extends Component {
         </td>
         <td>
           {props.results !== false ? (
-            this.renderInvestment()
+            this.renderInvestment(props)
           ) : ("")}
         </td>
       </tr>
