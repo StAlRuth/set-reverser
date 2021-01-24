@@ -141,7 +141,7 @@ class App extends Component {
   }
 
   render = (props, state) => (
-    <form id="app" onsubmit={this.onSubmit}>
+    <form id="app" class="grid-container fluid" onsubmit={this.onSubmit}>
       <h1>Pokemon Set Reverser</h1>
       <div class="grid-x">
         <div class="cell small-12 medium-auto">
