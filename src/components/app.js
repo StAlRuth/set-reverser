@@ -201,6 +201,7 @@ class App extends Component {
           <StatRow
             isHP={true}
             name={"HP"}
+            longName={"HP"}
             base={state.base["hp"]}
             value={state.value["hp"]}
             onInputBase={this.onInputBase("hp")}
@@ -210,6 +211,7 @@ class App extends Component {
           <StatRow
             isHP={false}
             name={"Atk"}
+            longName={"Attack"}
             base={state.base["atk"]}
             value={state.value["atk"]}
             nature={state.nature["atk"]}
@@ -221,6 +223,7 @@ class App extends Component {
           <StatRow
             isHP={false}
             name={"Def"}
+            longName={"Defense"}
             base={state.base["def"]}
             value={state.value["def"]}
             nature={state.nature["def"]}
@@ -232,6 +235,7 @@ class App extends Component {
           <StatRow
             isHP={false}
             name={"SpA"}
+            longName={"Special Attack"}
             base={state.base["spa"]}
             value={state.value["spa"]}
             nature={state.nature["spa"]}
@@ -243,6 +247,7 @@ class App extends Component {
           <StatRow
             isHP={false}
             name={"SpD"}
+            longName={"Special Defense"}
             base={state.base["spd"]}
             value={state.value["spd"]}
             nature={state.nature["spd"]}
@@ -254,6 +259,7 @@ class App extends Component {
           <StatRow
             isHP={false}
             name={"Spe"}
+            longName={"Speed"}
             base={state.base["spe"]}
             value={state.value["spe"]}
             nature={state.nature["spe"]}
