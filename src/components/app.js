@@ -121,6 +121,7 @@ class App extends Component {
         Number(data.get('level')),
         Number(data.get(i + '_nature'))
       );
+      results[i] = results[i] !== undefined ? results[i] : false;
     });
     this.setState((state) => {
       const newState = {
